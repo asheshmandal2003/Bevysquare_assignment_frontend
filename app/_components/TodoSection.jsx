@@ -52,6 +52,10 @@ function TodoSection({ initialTodos, pagination }) {
 
   const handleClick = (id) => {
     if (isMobile) {
+      const selectedTodo = todos.find((todo) => todo._id === id);
+      if (selectedTodo) {
+        setTodo(selectedTodo);
+      }
       setShowModal(true);
       document.body.style.overflow = "hidden";
     } else {
